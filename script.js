@@ -1,32 +1,25 @@
 const playBtn = document.getElementById("play-btn");
 const player = document.getElementById("radio-player");
 
+let isPlaying = false;
+
 playBtn.addEventListener("click", () => {
-  // Only source we use
-  const streamURL = "https://relay1.n0where.net/uvb76";
+  const streamURL = "https://relay1.n0where.net/uvb76"; // Reliable buzzer stream
 
-  // Set and play
-  if (!player.src) {
+  if (!isPlaying) {
     player.src = streamURL;
+    player.play()
+      .then(() => {
+        playBtn.textContent = "🔇 Stop The Buzzer";
+        isPlaying = true;
+      })
+      .catch((err) => {
+        alert("Failed to play the buzzer stream. Try again later.");
+        console.error(err);
+      });
+  } else {
+    player.pause();
+    playBtn.textContent = "🔊 Play The Buzzer";
+    isPlaying = false;
   }
-
-  player.play()
-    .then(() => {
-      playBtn.textContent = "🔇 Stop The Buzzer";
-    })
-    .catch(err => {
-      alert("Failed to play. Try again or check stream.");
-      console.error(err);
-    });
-  
-  // Toggle pause/play
-  playBtn.addEventListener("click", () => {
-    if (!player.paused) {
-      player.pause();
-      playBtn.textContent = "🔊 Play The Buzzer";
-    } else {
-      player.play();
-      playBtn.textContent = "🔇 Stop The Buzzer";
-    }
-  });
 });
