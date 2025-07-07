@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UVB-76 | The Buzzer</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,6 +13,16 @@
 
     <button id="play-btn">🔊 Play The Buzzer</button>
     <audio id="radio-player" preload="none"></audio>
+  </div>
+
+  <div class="websdr-container">
+    <h2>Explore with WebSDR</h2>
+    <p>Interact with the shortwave receiver yourself, tune around 4625 kHz!</p>
+    <iframe 
+      src="http://websdr.ewi.utwente.nl:8901/" 
+      frameborder="0" 
+      allowfullscreen
+      ></iframe>
   </div>
 
   <script src="script.js"></script>
