@@ -1,0 +1,45 @@
+body {
+  background-color: #0b0c10;
+  color: #66fcf1;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.radio-container {
+  background-color: #1f2833;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0 20px #66fcf1aa;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.subtext {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #c5c6c7;
+}
+
+button {
+  margin-top: 2rem;
+  background-color: #66fcf1;
+  color: #0b0c10;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a29e;
+}
